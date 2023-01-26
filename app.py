@@ -91,6 +91,9 @@ if uploaded_file is not None:
             with open(temp_audio_path, "wb") as f:
                 f.write(raw_bytes)
             audio_widget = right.audio(raw_bytes)
+        print("#############################")
+        print(temp_audio_path)
+        print("#############################")
         audio, _ = torchaudio.load(temp_audio_path)
 
     model_input = preprocess_audio(audio)
